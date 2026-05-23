@@ -19,11 +19,13 @@ def megszamlalas(szamok):
     return db
 
 def elvalasztas(szam):
+    szoveg = ""
     for i in range(len(szam)):
         if i == len(szam)-1:
-            print(szam[i], end="")
+            szoveg += str(szam[i])
         else: 
-            print(szam[i], end="*")
+            szoveg += str(szam[i]) + "*"
+    return szoveg
 
 def faljba_iras(szamok):
     with open ("ketjegyu.txt", "w", encoding="utf-8") as file:
@@ -33,7 +35,10 @@ def faljba_iras(szamok):
 
 def teljes():
     szamok = lista()
-    print(megszamlalas(szamok))
     elval = elvalasztas(szamok)
-    print(elval)
+    megszam = megszamlalas(szamok)
+    print("II/a,c")
+    print(f"\t{elval}")
+    print("II/b")
+    print(f"\t{megszam}")
     faljba_iras(szamok)
